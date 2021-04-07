@@ -9,40 +9,49 @@
 		class="main-navigation-menu"
 		:class="{'nav-collapsed':isCollapse}"
 	>
-		<div class="el-menu-item-group__title" style="padding-top: 4px;"><span>Apps</span></div>
-		<el-submenu index="/dashboards" popper-class="main-navigation-submenu">
-			<template slot="title">
-				<i class="mdi mdi-gauge"></i><span>หน้าหลัก</span>
-			</template>
+		<div class="el-menu-item-group__title" style="padding-top: 4px;"><span>เมนู</span></div>
 			<el-menu-item index="/dashboard">
-				<span slot="title">Blank page</span>
+				<i class="mdi mdi-gauge"></i><span>หน้าหลัก</span>
 			</el-menu-item>
-		</el-submenu>
+			<el-menu-item index="/404">
+			<i class="mdi mdi-alert-octagon"></i><span slot="title">รายการระบบสูบน้ำ</span>
+			</el-menu-item>
+			<el-menu-item index="/404">
+			<i class="mdi mdi-alert-octagon"></i><span slot="title">รายการแจ้งเตือน</span>
+			</el-menu-item>
+			<el-menu-item index="/404">
+			<i class="mdi mdi-alert-octagon"></i><span slot="title">รายการซ่อมบำรุง</span>
+			</el-menu-item>
+		
+	
 
-		<div class="el-menu-item-group__title"><span>Pages</span></div>
-		<el-menu-item index="/profile">
-			<i class="mdi mdi-account-card-details"></i><span slot="title">Profile</span>
-		</el-menu-item>
-		<el-submenu index="authentication" popper-class="main-navigation-submenu">
+		<div class="el-menu-item-group__title"><span>รายงาน</span></div>
+		<el-submenu index="report" popper-class="main-navigation-submenu">
 			<template slot="title">
-				<i class="mdi mdi-lock"></i><span>Authentication</span>
+				<i class="mdi mdi-lock"></i><span>รายงาน</span>
 			</template>
 			<el-menu-item index="/logout">
-				<span slot="title">Login</span>
+				<span slot="title">รายงานประจำวัน</span>
 			</el-menu-item>
-			<el-menu-item index="/login2">
-				<span slot="title">Login 2</span>
+			<el-menu-item index="/logout">
+				<span slot="title">รายงานประจำเดือน</span>
 			</el-menu-item>
-			<el-menu-item index="/register">
-				<span slot="title">Register</span>
-			</el-menu-item>
-			<el-menu-item index="/forgot-password">
-				<span slot="title">Forgot Password</span>
+			<el-menu-item index="/logout">
+				<span slot="title">รายงานประจำปี</span>
 			</el-menu-item>
 		</el-submenu>
-		<el-menu-item index="/404">
-			<i class="mdi mdi-alert-octagon"></i><span slot="title">404</span>
-		</el-menu-item>
+		<el-submenu index="authentication" popper-class="main-navigation-submenu">
+			<template slot="title">
+				<i class="mdi mdi-lock"></i><span>ลงทะเบียนเข้าใช้งาน</span>
+			</template>
+			<el-menu-item index="/register">
+				<span slot="title">ลงทะเบียน</span>
+			</el-menu-item>
+			<el-menu-item index="/forgot-password">
+				<span slot="title">ลืมรหัสผ่าน</span>
+			</el-menu-item>
+		</el-submenu>
+	
 
 	</el-menu>	
 </template>
