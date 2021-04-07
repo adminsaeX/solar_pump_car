@@ -12,7 +12,7 @@
 		<div class="el-menu-item-group__title" style="padding-top: 4px;"><span>Apps</span></div>
 		<el-submenu index="/dashboards" popper-class="main-navigation-submenu">
 			<template slot="title">
-				<i class="mdi mdi-gauge"></i><span>Dashboard</span>
+				<i class="mdi mdi-gauge"></i><span>หน้าหลัก</span>
 			</template>
 			<el-menu-item index="/dashboard">
 				<span slot="title">Blank page</span>
