@@ -169,7 +169,16 @@
 			<el-col :xs="24" :sm="12" :md="10" :lg="12" :xl="18">
 				<vue-scroll class="card-base card-shadow--medium  mb-30" style="height:410px">
 					<h3 class="mv-0 animated fadeInDown">พิกัดตำแหน่งของระบบ</h3>
-					
+					<div class="card-base card-shadow--medium">
+			<gmap-map ref="map" @click="clicked"
+				:center="{lat:40.720917, lng:-74.001308}"
+				:zoom="12"
+				:options="{gestureHandling:'cooperative'}"
+				map-type-id="roadmap"
+				style="width: 100%; height: 500px"
+			>
+			</gmap-map>
+		</div>
 				</vue-scroll>
 			</el-col>
 		</el-row>
