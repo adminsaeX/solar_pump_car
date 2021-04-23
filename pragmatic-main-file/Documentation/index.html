@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Pragmatic - Vue.js Admin Template</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+		pre {
+			background: rgba(0, 0, 0, 0.03);
+			padding: 20px;
+		}
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;Pragmatic - Vue.js Admin Template&rdquo; Documentation by &ldquo;Linko91&rdquo; v3.0.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;Pragmatic - Vue.js Admin Template&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 21 May 2019<br>
+					By: Linko91<br>
+					Email: <a href="mailto:webmaster.ddm@gmail.com">webmaster.ddm@gmail.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="https://themeforest.net/user/linko91">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#install">Install</a></li>
+			<li><a href="#gettingStarted">Getting started</a></li>
+			<li><a href="#completeDocs">Complete docs</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+			
+			<!--<li><a href="#">Licenses</a> <em class="quiet small">(source of photos)</em></li>-->
+		</ol>
+		
+		<hr>
+
+
+
+
+
+
+
+		
+		<h3 id="install"><strong>A) Install</strong> - <a href="#toc">top</a></h3>
+		
+
+		<h3 id="prerequisites"><span>Prerequisites</span></h3>
+		<p>All other assets shown in the demo are included in the download. All external libraries are loaded with npm. All it takes to get up and running with our template is Node.js, which is quickly installed and well documented. <a href="https://nodejs.org/" target="_blank">Node.js</a> automates the whole process of loading external libraries and allows for an easy headstart.</p>
+
+
+		<h4><strong>MAC or Linux Installation</strong></h4>
+		<p>Create a Project directory on your home directory. Copy all files from <strong>Pragmatic - Vue.js Admin Template</strong> folder on your project folder. Go to your directory with “cd” command.</p>
+
+
+		<h4><strong>Node.js Install</strong></h4>
+		<pre><code class="lang-bash">sudo apt-get update
+sudo apt-get install nodejs</code></pre>
+
+
+		<h4><strong>NPM Install</strong></h4>
+		<pre><code class="lang-bash">sudo apt-get install npm</code></pre>
+
+
+		<h4><strong>Vue.js and Webpack Install</strong></h4>
+		<pre><code class="lang-bash">sudo npm install -g @vue/cli</code></pre>
+		<p>After that you need to run “npm install” command. All Dependencies will install from “package.json” file.</p>
+
+
+		<h4><strong>Single Line Installlation</strong></h4>
+		<pre><code class="lang-bash"># install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run serve
+
+# build for production with minification
+npm run build</code></pre>
+		<p>After finishing install you will see a folder named “node_modules” created.</p>
+
+
+		<p><strong>This project is based on Vue CLI.</strong><br>Vue CLI is a full system for rapid Vue.js development, providing:</p>
+		<ul>
+			<li>Interactive project scaffolding via <code>@vue/cli</code>.</li>
+			<li>Zero config rapid prototyping via <code>@vue/cli</code> + <code>@vue/cli-service-global</code>.</li>
+			<li>A runtime dependency (<code>@vue/cli-service</code>) that is:
+				<ul>
+					<li>Upgradeable;</li>
+					<li>Built on top of webpack, with sensible defaults;</li>
+					<li>Configurable via in-project config file;</li>
+					<li>Extensible via plugins</li>
+				</ul>
+			</li>
+			<li>A rich collection of official plugins integrating the best tools in the frontend ecosystem.</li>
+		</ul>
+		<p>Vue CLI aims to be the standard tooling baseline for the Vue ecosystem. It ensures the various build tools work smoothly together with sensible defaults so you can focus on writing your app instead of spending days wrangling with configurations. At the same time, it still offers the flexibility to tweak the config of each tool without the need for ejecting.</p>
+
+		<h4><strong>Using the Binary</strong></h4>
+		<p>Inside a Vue CLI project, <code>@vue/cli-service</code> installs a binary named <code>vue-cli-service</code>. You can access the binary directly as <code>vue-cli-service</code> in npm scripts, or as <code>./node_modules/.bin/vue-cli-service</code> from the terminal.</p><p>This is what you will see in the <code>package.json</code> of a project using the default preset:</p>
+		<pre><code class="lang-json">
+		{
+		  "scripts": {
+		    "serve": "vue-cli-service serve --open",
+		    "build": "vue-cli-service build"
+		  }
+		}
+		</code></pre>
+
+		<hr>
+
+
+
+
+
+
+
+
+		<h3 id="gettingStarted"><strong>B) Getting started</strong> - <a href="#toc">top</a></h3>
+		
+		<p>Starts a dev server based on <a href="https://github.com/webpack/webpack-dev-server" target="_blank">webpack-dev-server</a>. It comes with hot-module-replacement (HMR) out of the box.</p>
+		<pre><code class="lang-bash">npm run serve</code></pre>
+
+		<p>You can configure the dev server's behavior using the <code>devServer</code> option in <code>vue.config.js</code>:</p>
+		<pre><code class="lang-js">
+		module.exports = {
+		  devServer: {
+		    open: process.platform === 'darwin',
+		    host: '0.0.0.0',
+		    port: 8080,
+		    https: false,
+		    hotOnly: false,
+		    proxy: null, // string | Object
+		    before: app => {
+		      // app is an express instance
+		    }
+		  }
+		}
+		</code></pre>
+
+		<p>In addition to these default values, <a href="https://webpack.js.org/configuration/dev-server/" target="_blank">all options for <code>webpack-dev-server</code></a> are also supported.</p>
+		
+
+		<h4 id="configuring-proxy"><span>Configuring Proxy</span></h4>
+		<p><code>devServer.proxy</code> can be a string pointing to the development API server:</p>
+		<pre><code class="lang-js">
+		module.exports = {
+		  devServer: {
+		    proxy: 'http://localhost:4000'
+		  }
+		}
+		</code></pre>
+
+		<p>This will tell the dev server to proxy any unknown requests (requests that did not match a static file) to <code>http://localhost:4000</code>.</p>
+		<p>If you want to have more control over the proxy behavior, you can also use an object with <code>path: options</code> pairs. Consult <a href="https://github.com/chimurai/http-proxy-middleware#proxycontext-config" target="_blank">http-proxy-middleware</a> for full options:</p>
+		<pre><code class="lang-js">
+		module.exports = {
+		  devServer: {
+		    proxy: {
+		      '/api': {
+		        target: url,
+		        ws: true,
+		        changeOrigin: true
+		      },
+		      '/foo': {
+		        target: other_url
+		      }
+		    }
+		  }
+		}
+		</code></pre>
+
+
+		<hr>
+		
+
+
+
+
+
+
+
+		<h3 id="completeDocs"><strong>C) Complete docs</strong> - <a href="#toc">top</a></h3>
+		
+		<p>Please visit <a href="https://pragmatic.ddmweb.it/docs/">Online Documentation</a> to access most recent version of the documentation.</p>
+
+		<p><a href="https://docsify.js.org/#/"  target="_blank">Docsify</a> was used to create the documentation.</p>
+		
+		<!--<p>To run the complete documentation locally, you need to install docsify</p>
+		<pre><code class="lang-bash">npm i docsify-cli -g</code></pre>
+
+		<p>and execute the following command in the project root</p>
+		<pre><code class="lang-bash">docsify serve docs</code></pre>-->
+		
+		<hr>
+		
+		<h3 id="credits"><strong>D) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+		<h5 id="this-template-is-based-on"><span>this template is based on</span></h5>
+		<ul>
+			<li>vue • <a href="https://vuejs.org/" target="_blank">https://vuejs.org/</a></li>
+			<li>vue-router • <a href="https://router.vuejs.org/en/" target="_blank">https://router.vuejs.org/en/</a></li>
+			<li>vuex • <a href="https://vuex.vuejs.org/en/" target="_blank">https://vuex.vuejs.org/en/</a></li>
+			<li>element ui • <a href="https://element.eleme.io/#/en-US" target="_blank">https://element.eleme.io/#/en-US</a></li>
+		</ul>
+		<h5 id="tables"><span>tables</span></h5>
+		<ul>
+			<li>v2-table • <a href="https://github.com/dwqs/v2-table" target="_blank">https://github.com/dwqs/v2-table</a></li>
+			<li>vue-good-table • <a href="https://github.com/xaksis/vue-good-table" target="_blank">https://github.com/xaksis/vue-good-table</a></li>
+			<li>tui-grid • <a href="http://ui.toast.com/tui-grid/" target="_blank">http://ui.toast.com/tui-grid/</a></li>
+		</ul>
+		<h5 id="charts"><span>charts</span></h5>
+		<ul>
+			<li>chart.js • <a href="https://www.chartjs.org/" target="_blank">https://www.chartjs.org/</a></li>
+			<li>chartist • <a href="https://gionkunz.github.io/chartist-js/" target="_blank">https://gionkunz.github.io/chartist-js/</a></li>
+			<li>echarts • <a href="https://github.com/apache/incubator-echarts" target="_blank">https://github.com/apache/incubator-echarts</a></li>
+			<li>echarts-gl • <a href="https://github.com/ecomfe/echarts-gl" target="_blank">https://github.com/ecomfe/echarts-gl</a></li>
+			<li>plotly.js • <a href="https://plot.ly/javascript/" target="_blank">https://plot.ly/javascript/</a></li>
+			<li>v-chartist • <a href="https://github.com/lakb248/vue-chartist" target="_blank">https://github.com/lakb248/vue-chartist</a></li>
+			<li>vue-bulma-chartjs • <a href="https://github.com/vue-bulma/chartjs" target="_blank">https://github.com/vue-bulma/chartjs</a></li>
+			<li>vue-chartkick • <a href="https://github.com/ankane/vue-chartkick" target="_blank">https://github.com/ankane/vue-chartkick</a></li>
+			<li>vue-d3-network • <a href="https://github.com/emiliorizzo/vue-d3-network" target="_blank">https://github.com/emiliorizzo/vue-d3-network</a></li>
+			<li>vuetrend • <a href="https://github.com/QingWei-Li/vue-trend" target="_blank">https://github.com/QingWei-Li/vue-trend</a></li>
+			<li>vuebars • <a href="https://github.com/DeviaVir/vue-bar" target="_blank">https://github.com/DeviaVir/vue-bar</a></li>
+			<li>vue2vis • <a href="https://github.com/alexcode/vue2vis" target="_blank">https://github.com/alexcode/vue2vis</a></li>
+			<li>vue-peity • <a href="https://github.com/vue-bulma/peity" target="_blank">https://github.com/vue-bulma/peity</a></li>
+		</ul>
+		<h5 id="maps"><span>maps</span></h5>
+		<ul>
+			<li>datamaps • <a href="https://github.com/markmarkoh/datamaps" target="_blank">https://github.com/markmarkoh/datamaps</a></li>
+			<li>mapbox-gl • <a href="https://www.mapbox.com/mapbox-gl-js/api/" target="_blank">https://www.mapbox.com/mapbox-gl-js/api/</a></li>
+			<li>vue2-google-maps • <a href="https://github.com/xkjyeah/vue-google-maps" target="_blank">https://github.com/xkjyeah/vue-google-maps</a></li>
+			<li>vue2-leaflet • <a href="https://github.com/KoRiGaN/Vue2Leaflet" target="_blank">https://github.com/KoRiGaN/Vue2Leaflet</a></li>
+		</ul>
+		<h5 id="editors"><span>editors</span></h5>
+		<ul>
+			<li>vue-pell-editor • <a href="https://github.com/CinKon/vue-pell-editor" target="_blank">https://github.com/CinKon/vue-pell-editor</a></li>
+			<li>vue-quill-editor • <a href="https://github.com/surmon-china/vue-quill-editor" target="_blank">https://github.com/surmon-china/vue-quill-editor</a></li>
+			<li>mavonEditor • <a href="https://github.com/hinesboy/mavonEditor" target="_blank">https://github.com/hinesboy/mavonEditor</a></li>
+		</ul>
+		<h5 id="ui"><span>ui</span></h5>
+		<ul>
+			<li>animate.css • <a href="https://daneden.github.io/animate.css/" target="_blank">https://daneden.github.io/animate.css/</a></li>
+			<li>balloon-css • <a href="http://kazzkiq.github.io/balloon.css/" target="_blank">http://kazzkiq.github.io/balloon.css/</a></li>
+			<li>color-thief-browser • <a href="http://lokeshdhakar.com/projects/color-thief/" target="_blank">http://lokeshdhakar.com/projects/color-thief/</a></li>
+			<li>cryptocoins-icons • <a href="https://github.com/allienworks/cryptocoins/" target="_blank">https://github.com/allienworks/cryptocoins/</a></li>
+			<li>drift-zoom • <a href="https://github.com/imgix/drift/" target="_blank">https://github.com/imgix/drift/</a></li>
+			<li>flag-icon-css • <a href="https://github.com/lipis/flag-icon-css" target="_blank">https://github.com/lipis/flag-icon-css</a></li>
+			<li>flex.box • <a href="https://github.com/ixrock/flexbox" target="_blank">https://github.com/ixrock/flexbox</a></li>
+			<li>fullcalendar • <a href="https://fullcalendar.io/" target="_blank">https://fullcalendar.io/</a></li>
+			<li>marquee-infinite • <a href="https://github.com/jesperjohansson/marquee-infinite#readme/" target="_blank">https://github.com/jesperjohansson/marquee-infinite#readme/</a></li>
+			<li>mdi • <a href="https://materialdesignicons.com/" target="_blank">https://materialdesignicons.com/</a></li>
+			<li>perfect-scrollbar • <a href="https://github.com/utatti/perfect-scrollbar#readme/" target="_blank">https://github.com/utatti/perfect-scrollbar#readme/</a></li>
+			<li>tui-calendar • <a href="https://github.com/nhnent/tui.calendar#readme/" target="_blank">https://github.com/nhnent/tui.calendar#readme/</a></li>
+			<li>tui-image-editor • <a href="https://github.com/nhnent/tui.image-editor#readme/" target="_blank">https://github.com/nhnent/tui.image-editor#readme/</a></li>
+			<li>v-click-outside • <a href="https://github.com/ndelvalle/v-click-outside" target="_blank">https://github.com/ndelvalle/v-click-outside</a></li>
+			<li>v-viewer • <a href="https://github.com/mirari/v-viewer" target="_blank">https://github.com/mirari/v-viewer</a></li>
+			<li>vue-cute-timeline • <a href="https://github.com/luyilin/vue-cute-timeline" target="_blank">https://github.com/luyilin/vue-cute-timeline</a></li>
+			<li>vue-float-label • <a href="https://github.com/bkzl/vue-float-label" target="_blank">https://github.com/bkzl/vue-float-label</a></li>
+			<li>vue-highlightjs • <a href="https://github.com/metachris/vue-highlightjs" target="_blank">https://github.com/metachris/vue-highlightjs</a></li>
+			<li>vue-lazyload • <a href="https://github.com/hilongjw/vue-lazyload" target="_blank">https://github.com/hilongjw/vue-lazyload</a></li>
+			<li>vue-masonry-css • <a href="https://github.com/paulcollett/vue-masonry-css#readme" target="_blank">https://github.com/paulcollett/vue-masonry-css#readme</a></li>
+			<li>vue-resize • <a href="https://github.com/Akryum/vue-resize" target="_blank">https://github.com/Akryum/vue-resize</a></li>
+			<li>vue-perfect-scrollbar • <a href="https://github.com/Degfy/vue-perfect-scrollbar" target="_blank">https://github.com/Degfy/vue-perfect-scrollbar</a></li>
+			<li>vue-status-indicator • <a href="https://github.com/coderdiaz/vue-status-indicator" target="_blank">https://github.com/coderdiaz/vue-status-indicator</a></li>
+			<li>vue-textarea-autosize • <a href="https://github.com/devstark-com/vue-textarea-autosize#readme" target="_blank">https://github.com/devstark-com/vue-textarea-autosize#readme</a></li>
+			<li>vue-virtual-collection • <a href="https://github.com/starkwang/vue-virtual-collection" target="_blank">https://github.com/starkwang/vue-virtual-collection</a></li>
+			<li>vue-virtual-scroll-list • <a href="https://github.com/tangbc/vue-virtual-scroll-list" target="_blank">https://github.com/tangbc/vue-virtual-scroll-list</a></li>
+			<li>vuebar • <a href="https://github.com/DominikSerafin/vuebar" target="_blank">https://github.com/DominikSerafin/vuebar</a></li>
+			<li>vue-i18n • <a href="https://github.com/kazupon/vue-i18n" target="_blank">https://github.com/kazupon/vue-i18n</a></li>
+		</ul>
+		<h5 id="others"><span>others</span></h5>
+		<ul>
+			<li>chance • <a href="http://chancejs.com/" target="_blank">http://chancejs.com/</a></li>
+			<li>detect-browser • <a href="https://github.com/DamonOehlman/detect-browser" target="_blank">https://github.com/DamonOehlman/detect-browser</a></li>
+			<li>es6-promise • <a href="https://github.com/stefanpenner/es6-promise" target="_blank">https://github.com/stefanpenner/es6-promise</a></li>
+			<li>es7-shim • <a href="http://github.com/es-shims/es7-shim/" target="_blank">http://github.com/es-shims/es7-shim/</a></li>
+			<li>file-saver • <a href="https://github.com/eligrey/FileSaver.js/" target="_blank">https://github.com/eligrey/FileSaver.js/</a></li>
+			<li>lodash • <a href="https://lodash.com/" target="_blank">https://lodash.com/</a></li>
+			<li>moment-timezone • <a href="https://momentjs.com/" target="_blank">https://momentjs.com/</a></li>
+			<li>papaparse • <a href="https://www.papaparse.com/" target="_blank">https://www.papaparse.com/</a></li>
+			<li>vue-fullscreen • <a href="https://github.com/mirari/vue-fullscreen" target="_blank">https://github.com/mirari/vue-fullscreen</a></li>
+			<li>vuex-persistedstate • <a href="https://github.com/robinvdvleuten/vuex-persistedstate" target="_blank">https://github.com/robinvdvleuten/vuex-persistedstate</a></li>
+		</ul>
+
+		<h5 id="photo"><span>Photo</span></h5>
+		<p>I took all the photos from <a href="https://www.pexels.com/" target="_blank">pexels.com</a> with Creative Commons Zero (CC0) license.
+		All photos on Pexels are free for any personal and commercial purpose.</p>
+		
+		<h5 id="fonts"><span>Fonts</span></h5>
+		<h6><a href="https://fonts.google.com/specimen/Nunito+Sans" target="_blank">Nunito Sans</a></h6>
+		<p>Nunito is a well balanced sans serif typeface superfamily, with 2 versions: The project began with <a href="https://fonts.google.com/specimen/Nunito" target="_blank">Nunito</a>, created by <strong>Vernon Adams</strong> as a rounded terminal sans serif for display typography. <strong>Jacques Le Bailly</strong> extended it to a full set of weights, and an accompanying regular non-rounded terminal version, Nunito Sans.<br><a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web" target="_blank">Open Font License</a></p>
+		
+
+		<hr>
+		
+		<p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+		
+		<p class="append-bottom alt large"><strong>Linko91</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
