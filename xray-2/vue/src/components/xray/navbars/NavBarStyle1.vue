@@ -6,7 +6,7 @@
         <div class="top-logo">
           <router-link :to="homeURL">
             <img :src="logo" class="img-fluid" alt="logo">
-            <span>XRay</span>
+            <span>STREAM</span>
           </router-link>
         </div>
       </div>
@@ -16,12 +16,6 @@
         </div>
       </div>
       <nav class="navbar navbar-expand-lg navbar-light p-0">
-        <div class="iq-search-bar">
-          <form action="#" class="searchbox">
-            <input type="text" class="text search-input" placeholder="Type here to search...">
-            <a class="search-link" href="#"><i class="ri-search-line"></i></a>
-          </form>
-        </div>
         <b-navbar-toggle target="nav-collapse">
           <i class="ri-menu-3-line"></i>
         </b-navbar-toggle>

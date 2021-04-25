@@ -1,9 +1,9 @@
 {
   "sidebar": {
     "dashboard": "Dashboard",
-    "dashboard1": "Doctor Dashboard",
-    "dashboard2": "Hospital Dashboard 1",
-    "dashboard3": "Hospital Dashboard 2",
+    "dashboard1": "หน้าหลัก",
+    "dashboard2": "รายงาน",
+    "dashboard3": "รายการซ่อมบำรุง",
     "dashboard4": "Patient Dashboard",
     "app": "App",
     "eCommerce": "E-Commerce",

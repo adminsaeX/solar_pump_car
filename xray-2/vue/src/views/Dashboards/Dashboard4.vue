@@ -9,9 +9,9 @@
                 <div class="iq-progress-bar progress-bar-vertical iq-bg-primary">
                   <span class="bg-primary" data-percent="70"></span>
                 </div>
-                <span class="line-height-4">10 feb, 2020</span>
-                <h4 class="mb-2 mt-2">Hypertensive Crisis</h4>
-                <p class="mb-0 text-secondary line-height">Ongoing treatment</p>
+                <span class="line-height-4">ปริมาณน้ำ</span>
+                <h4 class="mb-2 mt-2">1</h4>
+                <p class="mb-0 text-secondary line-height">m<sup>3</sup></p>
               </template>
             </iq-card>
           </b-col>
@@ -21,9 +21,9 @@
                 <div class="iq-progress-bar progress-bar-vertical iq-bg-danger">
                   <span class="bg-danger" data-percent="50"></span>
                 </div>
-                <span class="line-height-4">12 Jan, 2020</span>
-                <h4 class="mb-2 mt-2">Osteoporosis</h4>
-                <p class="mb-0 text-secondary line-height">Incurable</p>
+                <span class="line-height-4">พลังงานไฟฟ้า</span>
+                <h4 class="mb-2 mt-2">1</h4>
+                <p class="mb-0 text-secondary line-height">kWh</p>
               </template>
             </iq-card>
           </b-col>
@@ -33,16 +33,22 @@
                 <div class="iq-progress-bar progress-bar-vertical iq-bg-warning">
                   <span class="bg-warning" data-percent="80"></span>
                 </div>
-                <span class="line-height-4">15 feb, 2020</span>
-                <h4 class="mb-2 mt-2">Hypertensive Crisis</h4>
-                <p class="mb-0 text-secondary line-height">Examination</p>
+                <span class="line-height-4">ชั่วโมงการทำงานสะสม</span>
+                <h4 class="mb-2 mt-2">1</h4>
+                <p class="mb-0 text-secondary line-height">ชั่วโมง</p>
               </template>
             </iq-card>
           </b-col>
           <b-col md="6" lg="3">
-            <iq-card class-name="iq-card-block iq-card-stretch iq-card-height" nobody>
-              <div class="iq-card-body p-0 rounded" :style="`background: url(${require('../../assets/images/page-img/38.jpg')}) no-repeat scroll center center; background-size: contain;  min-height: 146px;`">
-              </div>
+            <iq-card class-name="iq-card-block iq-card-stretch iq-card-height">
+              <template v-slot:body>
+                <div class="iq-progress-bar progress-bar-vertical iq-bg-warning">
+                  <span class="bg-warning" data-percent="80"></span>
+                </div>
+                <span class="line-height-4">ผลประหยัดพลังงาน</span>
+                <h4 class="mb-2 mt-2">1</h4>
+                <p class="mb-0 text-secondary line-height">บาท</p>
+              </template>
             </iq-card>
           </b-col>
         </b-row>
@@ -55,22 +61,10 @@
                 <img src="../../assets/images/user/11.png" alt="profile-img" class="avatar-130 img-fluid">
               </div>
               <div class="text-center mt-3">
-                <h4><b>Bini Jets</b></h4>
-                <p>Doctor</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in arcu turpis. Nunc</p>
-                <a href="#" class="btn btn-primary">Assign</a>
+                <h4><b>ระบบสูบน้ำพลังงานแสงอาทิตย์</b></h4>
+                <p>ระบบสูบน้ำพลังงานแสงอาทิตย์ ประกอบด้วย ชุดแผงเชลล์แสงอาทิตย์ทำหน้าที่ผลิตไฟฟ้ากระแสตรงเมื่อได้รับพลังงานแสงอาทิตย์ และจ่ายกระแสไฟฟ้าผ่านอุปกรณ์ควบคุมการทำงาน (Control unit) ที่ทำหน้าที่ในการจ่ายค่ากระแสและแรงดันไฟฟที่เหมาะสมให้แก่ชุดเครื่องสูบน้ำ</p>
               </div>
               <hr>
-              <ul class="doctoe-sedual d-flex align-items-center justify-content-between p-0">
-                <li class="text-center">
-                  <h3 class="counter">4500</h3>
-                  <span>Operations</span>
-                </li>
-                <li class="text-center">
-                  <h3 class="counter">3.9</h3>
-                  <span>Medical Rating</span>
-                </li>
-              </ul>
             </div>
           </template>
         </iq-card>
@@ -78,7 +72,7 @@
       <b-col lg="8">
         <iq-card class-name=iq-card-block iq-card-stretch iq-card-height>
           <template v-slot:headerTitle>
-            <h4 class="card-title">Health Curve</h4>
+            <h4 class="card-title">กราฟ สมรรถนะระบบสูบน้ำพลังงานแสงอาทิตย์</h4>
           </template>
           <template v-slot:body>
             <ApexChart element="home-chart-06" :chartOption="darkChart1" v-if="$route.meta.dark"/>
@@ -91,175 +85,19 @@
       <b-col lg="4">
         <iq-card class-name="iq-card-block iq-card-stretch iq-card-height" body-class="smaill-calender-home">
           <template v-slot:headerTitle>
-            <h4 class="card-title">Nearest Treatment</h4>
+            <h4 class="card-title">ปฏิทิน</h4>
           </template>
           <template v-slot:body>
             <flat-pickr :config="config" value="" class="d-none" />
           </template>
         </iq-card>
       </b-col>
-      <b-col lg="4">
-        <iq-card class-name="iq-card-block iq-card-stretch iq-card-height-half" nobody>
-          <div class="iq-card-body">
-              <h6>APPOINTMENTS</h6>
-              <h3><b>5075</b></h3>
-          </div>
-            <ApexChart element="wave-chart-7" :chartOption="chart7" :isLive="true"/>
-        </iq-card>
-        <iq-card class-name="iq-card-block iq-card-stretch iq-card-height-half" nobody>
-          <div class="iq-card-body">
-              <h6>NEW PATIENTS</h6>
-              <h3><b>1200</b></h3>
-          </div>
-            <ApexChart element="wave-chart-8" :chartOption="chart8" :isLive="true"/>
-        </iq-card>
-      </b-col>
-      <b-col lg="4">
-        <iq-card class-name="iq-card-block iq-card-stretch iq-card-height" body-class="hospital-mgt">
+      <b-col lg="8">
+        <iq-card class-name=iq-card-block iq-card-stretch iq-card-height>
           <template v-slot:headerTitle>
-            <h4 class="card-title">Hospital Management</h4>
+            <h4 class="card-title">กราฟ อุณหภูมิและความชื้น</h4>
           </template>
           <template v-slot:body>
-            <div class="progress mb-3" style="height: 30px;">
-              <div class="progress-bar bg-primary" role="progressbar" style="width: 20%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">OPD</div>
-              <div class="progress-bar bg-warning" role="progressbar" style="width: 80%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">80%</div>
-            </div>
-            <div class="progress mb-3" style="height: 30px;">
-              <div class="progress-bar bg-primary" role="progressbar" style="width: 30%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">Treatment</div>
-              <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">70%</div>
-            </div>
-            <div class="progress mb-3" style="height: 30px;">
-              <div class="progress-bar bg-primary" role="progressbar" style="width: 60%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">Laboratory Test</div>
-              <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">85%</div>
-            </div>
-            <div class="progress mb-3" style="height: 30px;">
-              <div class="progress-bar bg-primary" role="progressbar" style="width: 40%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">New Patient</div>
-              <div class="progress-bar bg-warning" role="progressbar" style="width: 60%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">70%</div>
-            </div>
-            <div class="progress mb-3" style="height: 30px;">
-              <div class="progress-bar bg-primary" role="progressbar" style="width: 35%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">Doctors</div>
-              <div class="progress-bar bg-warning" role="progressbar" style="width: 65%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">95%</div>
-            </div>
-            <div class="progress" style="height: 30px;">
-              <div class="progress-bar bg-primary" role="progressbar" style="width: 28%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">Discharge</div>
-              <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">35%</div>
-            </div>
-          </template>
-        </iq-card>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col lg="3">
-        <iq-card class-name="iq-card-block iq-card-stretch iq-card-height">
-          <template v-slot:headerTitle>
-            <h4 class="card-title">Patient Progress</h4>
-          </template>
-          <template v-slot:body>
-            <ul class="patient-progress m-0 p-0">
-              <li class="d-flex mb-3 align-items-center">
-                <div class="media-support-info">
-                  <h6>Bud Jet</h6>
-                </div>
-                <span class="badge badge-primary">30%</span>
-              </li>
-              <li class="d-flex mb-3 align-items-center">
-                <div class="media-support-info">
-                  <h6>Barney Cull</h6>
-                </div>
-                <span class="badge badge-success">70%</span>
-              </li>
-              <li class="d-flex mb-3 align-items-center">
-                <div class="media-support-info">
-                  <h6>Eric Shun</h6>
-                </div>
-                <span class="badge badge-danger">15%</span>
-              </li>
-              <li class="d-flex mb-3 align-items-center">
-                <div class="media-support-info">
-                  <h6>Rick Shaw</h6>
-                </div>
-                <span class="badge badge-warning">55%</span>
-              </li>
-              <li class="d-flex mb-3 align-items-center">
-                <div class="media-support-info">
-                  <h6>Ben Effit</h6>
-                </div>
-                <span class="badge badge-info">45%</span>
-              </li>
-              <li class="d-flex mb-3 align-items-center">
-                <div class="media-support-info">
-                  <h6>Rick Shaw</h6>
-                </div>
-                <span class="badge badge-warning">55%</span>
-              </li>
-              <li class="d-flex mb-3 align-items-center">
-                <div class="media-support-info">
-                  <h6>Marge Arita</h6>
-                </div>
-                <span class="badge badge-primary">65%</span>
-              </li>
-              <li class="d-flex align-items-center">
-                <div class="media-support-info">
-                  <h6>Barry Cudat</h6>
-                </div>
-                <span class="badge badge-danger">15%</span>
-              </li>
-            </ul>
-          </template>
-        </iq-card>
-      </b-col>
-      <b-col lg="6">
-        <iq-card class-name="iq-card-block iq-card-stretch iq-card-height" body-class="pl-0 pr-0">
-          <template v-slot:headerTitle>
-            <h4 class="card-title">Patient overview</h4>
-          </template>
-          <template v-slot:body>
-            <AmChart element="home-chart-03" :type=radialChat.type :option=radialChat.data  :height=radialChat.height />
-          </template>
-        </iq-card>
-      </b-col>
-      <b-col lg="3">
-        <iq-card class-name="iq-card-block iq-card-stretch iq-card-height">
-          <template v-slot:headerTitle>
-            <h4 class="card-title">Visits From Countries </h4>
-          </template>
-          <template v-slot:body>
-            <div class="iq-details">
-              <span class="title text-dark">United States</span>
-              <div class="percentage float-right text-primary">95 <span>%</span></div>
-              <div class="iq-progress-bar-linear d-inline-block w-100">
-                <div class="iq-progress-bar">
-                  <span class="bg-primary" data-percent="95"></span>
-                </div>
-              </div>
-            </div>
-            <div class="iq-details mt-4">
-              <span class="title text-dark">India</span>
-              <div class="percentage float-right text-warning">75 <span>%</span></div>
-              <div class="iq-progress-bar-linear d-inline-block w-100">
-                <div class="iq-progress-bar">
-                  <span class="bg-warning" data-percent="75"></span>
-                </div>
-              </div>
-            </div>
-            <div class="iq-details mt-4">
-              <span class="title text-dark">Australia</span>
-              <div class="percentage float-right text-success">55 <span>%</span></div>
-              <div class="iq-progress-bar-linear d-inline-block w-100">
-                <div class="iq-progress-bar">
-                  <span class="bg-success" data-percent="55"></span>
-                </div>
-              </div>
-            </div>
-            <div class="iq-details mt-4">
-              <span class="title text-dark">Brazil</span>
-              <div class="percentage float-right text-danger">25 <span>%</span></div>
-              <div class="iq-progress-bar-linear d-inline-block w-100">
-                <div class="iq-progress-bar">
-                  <span class="bg-danger" data-percent="25"></span>
-                </div>
-              </div>
-            </div>
           </template>
         </iq-card>
       </b-col>
@@ -268,7 +106,7 @@
       <b-col lg="8">
         <iq-card class-name="iq-card-block iq-card-stretch iq-card-height">
           <template v-slot:headerTitle>
-            <h4 class="card-title">New Appointments </h4>
+            <h4 class="card-title">รายการ สถานะการทำงานและซ่อมบำรุง </h4>
           </template>
           <template v-slot:headerAction>
             <b-dropdown size="lg p-0"  variant="link" toggle-class="text-decoration-none" no-caret>
@@ -314,7 +152,7 @@
       <b-col lg="4">
         <iq-card class-name="iq-card-block iq-card-stretch iq-card-height">
           <template v-slot:headerTitle>
-            <h4 class="card-title">Doctors Lists</h4>
+            <h4 class="card-title">รายการแจ้งเตือน</h4>
           </template>
           <template v-slot:body>
             <ul class="doctors-lists m-0 p-0">

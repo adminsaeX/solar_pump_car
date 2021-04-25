@@ -3,10 +3,10 @@
     <form class="mt-4" novalidate @submit.prevent="handleSubmit(onSubmit)">
       <ValidationProvider vid="email" name="E-mail" rules="required|email" v-slot="{ errors }">
         <div class="form-group ">
-          <label for="emailInput">Email address</label>
+          <label for="emailInput">อีเมล์</label>
           <input type="email" :class="'form-control mb-0' +(errors.length > 0 ? ' is-invalid' : '')"
                  id="emailInput" aria-describedby="emailHelp"
-                 v-model="user.email" placeholder="Enter email" required>
+                 v-model="user.email" placeholder="กรุณาใส่อีเมล์" required>
           <div class="invalid-feedback">
             <span>{{ errors[0] }}</span>
           </div>
@@ -14,13 +14,13 @@
       </ValidationProvider>
       <ValidationProvider vid="password" name="Password" rules="required" v-slot="{ errors }">
         <div class="form-group">
-          <label for="passwordInput">Password</label>
+          <label for="passwordInput">รหัสผ่าน</label>
           <router-link to="/auth/password-reset1" class="float-right">
-            Forgot password?
+            ลืมรหัสผ่าน?
           </router-link>
           <input type="password"  :class="'form-control mb-0' +(errors.length > 0 ? ' is-invalid' : '')"
                  id="passwordInput"
-                 v-model="user.password" placeholder="Password" required>
+                 v-model="user.password" placeholder="รหัสผ่าน" required>
           <div class="invalid-feedback">
             <span>{{ errors[0] }}</span>
           </div>
@@ -29,18 +29,18 @@
       <div class="d-inline-block w-100">
         <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">
           <input type="checkbox" class="custom-control-input" :id="formType">
-          <label class="custom-control-label" :for="formType">Remember Me</label>
+          <label class="custom-control-label" :for="formType">จดจำฉันไว้ครั้งหน้า</label>
         </div>
-        <button type="submit" class="btn btn-primary float-right">Sign in</button>
+        <button type="submit" class="btn btn-primary float-right">เข้าสู่ระบบ</button>
       </div>
       <div class="sign-info">
           <span class="dark-color d-inline-block line-height-2">
-            Don't have an account?
+            ยังไม่มีบัญชีเข้าใช้งาน?
             <router-link to="/dark/auth/sign-up1" class="iq-waves-effect pr-4" v-if="$route.meta.dark">
-              Sign up
+              ลงทะเบียน
             </router-link>
             <router-link to="/auth/sign-up1" class="iq-waves-effect pr-4" v-else>
-              Sign up
+              ลงทะเบียน
             </router-link>
           </span>
         <social-login-form></social-login-form>
@@ -52,6 +52,7 @@
 <script>
 import SocialLoginForm from './SocialLoginForm'
 import { mapGetters } from 'vuex'
+import firebase from 'firebase'
 
 export default {
   name: 'SignIn1Form',
@@ -77,7 +78,15 @@ export default {
       this.login()
     },
     login () {
-      this.$router.push({ name: 'dashboard.home-1' })
+      firebase
+      .auth()
+      .signInWithEmailAndPassword(this.user.email,this.user.password)
+      .then((user)=>{
+        this.$router.push({ name: 'dashboard.home-2' })
+      }).catch((err)=>{
+        alert(err.message)
+      })
+      
     }
   }
 }

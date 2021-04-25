@@ -10,14 +10,6 @@
         <NavBarStyle1 title="Dashboard" :homeURL="{ name: 'dashboard1.home' }" @toggle="sidebarMini" :logo="logo" :horizontal="horizontal" :items="horizontalMenu">
           <template slot="responsiveRight">
             <ul class="navbar-nav ml-auto navbar-list">
-              <li class="nav-item">
-                <a class="search-toggle iq-waves-effect language-title" href="#"><img :src="selectedLang.image" alt="img-flaf" class="img-fluid mr-1" style="height: 16px; width: 16px;" /> {{ selectedLang.title }} <i class="ri-arrow-down-s-line"></i></a>
-                <div class="iq-sub-dropdown">
-                  <a class="iq-sub-card" href="javascript:void(0)" v-for="(lang, i) in langsOptions" :key="`Lang${i}`" @click="langChange(lang)">
-                    <img :src="lang.image" alt="img-flaf" class="img-fluid mr-2" />{{ lang.title }}
-                  </a>
-                </div>
-              </li>
               <li class="nav-item iq-full-screen">
                 <a href="#" class="iq-waves-effect" id="btnFullscreen"><i class="ri-fullscreen-line"></i></a>
               </li>
@@ -41,32 +33,6 @@
                             <h6 class="mb-0 ">{{ item.name }}</h6>
                             <small class="float-right font-size-12">{{ item.date }}</small>
                             <p class="mb-0">{{ item.description.substring(0,40) + '...' }}</p>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="search-toggle iq-waves-effect">
-                  <i class="ri-mail-open-fill"></i>
-                  <span class="bg-primary count-mail"></span>
-                </a>
-                <div class="iq-sub-dropdown">
-                  <div class="iq-card shadow-none m-0">
-                    <div class="iq-card-body p-0 ">
-                      <div class="bg-primary p-3">
-                        <h5 class="mb-0 text-white">{{ $t('nav.allMessages') }}<small class="badge  badge-light float-right pt-1">5</small></h5>
-                      </div>
-                      <a href="#" class="iq-sub-card" v-for="(item,index) in message" :key="index">
-                        <div class="media align-items-center">
-                          <div class="">
-                            <img class="avatar-40 rounded" :src="item.image" alt="img">
-                          </div>
-                          <div class="media-body ml-3">
-                            <h6 class="mb-0 ">{{ item.name }}</h6>
-                            <small class="float-left font-size-12">{{ item.date }}</small>
                           </div>
                         </div>
                       </a>
@@ -231,6 +197,9 @@ export default {
     }
   },
   methods: {
+    miniSidebar () {
+      this.$emit('toggle')
+    },
     updateRadio () {
       this.horizontal = this.$store.getters['Setting/horizontalMenuState']
       this.mini = this.$store.getters['Setting/miniSidebarState']

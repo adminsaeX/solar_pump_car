@@ -2,8 +2,8 @@
   <div class="iq-sidebar">
     <div class="iq-sidebar-logo d-flex justify-content-between">
       <router-link :to="homeURL">
-        <img :src="logo" class="img-fluid" alt="logo">
-        <span>XRay</span>
+        <img src="../../../assets/images/logo-sae.png" alt="logo" />
+        <span>STREAM</span>
       </router-link>
       <div class="iq-menu-bt-sidebar" v-if="toggleButton">
         <div class="iq-menu-bt align-self-center">
@@ -29,9 +29,9 @@ import List from '../menus/ListStyle1'
 export default {
   name: 'SideBarStyle1',
   props: {
-    homeURL: { type: Object, default: () => ({ name: 'layout1.dashboard' }) },
+    homeURL: { type: Object, default: () => ({ name: 'lay55809out1.dashboard' }) },
     items: { type: Array },
-    logo: { type: String, default: require('../../../assets/images/logo.png') },
+    logo: { type: String, default: require('../../../assets/images/logo-sae.png') },
     horizontal: { type: Boolean },
     toggleButton: { type: Boolean, default: true }
   },
