@@ -2,33 +2,30 @@
 	<vue-scroll class="register-page align-vertical">
 		<div class="form-wrapper align-vertical-middle">
 			<div class="form-box card-base card-shadow--extraLarge">
-				<img class="image-logo" src="@/assets/images/logo.svg" alt="logo"/>
+				<img class="image-logo" src="@/assets/images/logo.gif" alt="logo"/>
 				
 				<float-label class="styled">
-					<input type="text" placeholder="Name">
+					<input v-model ="form.email" type="email" placeholder="อีเมล์">
 				</float-label>
 				<float-label class="styled">
-					<input type="email" placeholder="E-mail">
+					<input v-model="form.password" type="password" placeholder="รหัสผ่าน">
 				</float-label>
 				<float-label class="styled">
-					<input type="password" placeholder="Password">
-				</float-label>
-				<float-label class="styled">
-					<input type="password" placeholder="Password (confirm)">
+					<input v-model="form.re_password" type="password" placeholder="ยืนยันรหัสผ่าน">
 				</float-label>
 				
 				<div class="flex">
-					<div class="box grow"><el-checkbox>I read and accept terms</el-checkbox></div>
+					<div class="box grow"><el-checkbox>ฉันยอมรับเงื่อนไข</el-checkbox></div>
 				</div>
 
 				<div class="flex text-center center pt-30 pb-20">			
 					<el-button plain size="small" @click="login" class="signin-btn tada animated">
-						SIGN IN
+						เข้าสู่ระบบ
 					</el-button>
 				</div>
 
 				<div class="text-center login-box pt-10">
-					Already have an account? <a>Login</a>
+					มีบัญชีใช้งานแล้ว <a @click="loginPage()">เข้าสู่ระบบ</a>
 				</div>
 			</div>
 		</div>
@@ -36,6 +33,7 @@
 </template>
 
 <script>
+import firebase from 'firebase'
 export default {
 	name: 'Register',
 	data() {
@@ -43,13 +41,27 @@ export default {
 			form: {
 				email: '',
 				password: '',
+				re_password:''
 			}
 		}
 	},
 	methods: {
 		login() {
-			this.$store.commit('setLogin')
-			this.$router.push('dashboard')
+			if(this.form.password === this.form.re_password){
+			firebase
+			.auth()
+			.createUserWithEmailAndPassword(this.form.email, this.form.password).then((user) => {
+				this.$router.push('login')
+				// eslint-disable-next-line handle-callback-err
+			}).catch((err) => {
+				this.$alert(err.message,"การุณาตรวจสอบการป้อนข้อมูล","warning")
+			})
+			}else{
+				this.$alert("รหัสผ่านไม่ตรงกัน","การุณาตรวจสอบการป้อนข้อมูล","warning")
+			}
+		},
+		loginPage(){
+			this.$router.push('login')
 		}
 	}
 }

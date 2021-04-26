@@ -46,9 +46,13 @@ export default new Vuex.Store({
 			state.layout.navPos = null
 			state.layout.toolbar = null
 			state.logged = false
+			state.user = null
 		},
 		setSplashScreen(state, payload) {
 			state.splashScreen = payload
+		},
+		setUser(state,payload){
+			state.user = (payload)
 		}
 	},
 	actions: {

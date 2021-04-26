@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 //apps
 import Dashboard from '../views/apps/Dashboard.vue'
-
+import ReportDay from '../views/apps/reportday.vue'
 //pages
 import Login from '../views/pages/authentication/Login.vue'
 import Login2 from '../views/pages/authentication/Login2.vue'
@@ -27,6 +27,17 @@ const router = new Router({
 			alias: '/dashboard',
 			name: 'dashboard',
 			component: Dashboard,
+			meta: {
+				auth: true,
+				layout: layouts.navLeft,
+				searchable: true,
+				tags: ['app']
+			}
+		},
+		{
+			path: '/reportday',
+			name: 'reportday',
+			component: ReportDay,
 			meta: {
 				auth: true,
 				layout: layouts.navLeft,

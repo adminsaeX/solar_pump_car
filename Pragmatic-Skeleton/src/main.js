@@ -39,6 +39,8 @@ import App from './App.vue'
 import router from './router/' 
 import store from './store' 
 import i18n_messages from './i18n.json' 
+import firebase from 'firebase/app'
+import VueSimpleAlert from "vue-simple-alert";
 
 
 Vue.config.productionTip = false
@@ -59,8 +61,22 @@ Vue.use(Element, {locale})
 Vue.use(vClickOutside)
 Vue.use(VueFloatLabel)
 Vue.use(Vuebar)
+Vue.use(VueSimpleAlert)
 Vue.component('vue-scroll', VuePerfectScrollbar)
 Vue.directive('affix', Affix)
+
+var firebaseConfig = {
+    apiKey: "AIzaSyDONVKLyrlicjVV2sLFePTSjVo8ljP03g4",
+    authDomain: "solarpumpcar.firebaseapp.com",
+    projectId: "solarpumpcar",
+    storageBucket: "solarpumpcar.appspot.com",
+    messagingSenderId: "845232095290",
+    appId: "1:845232095290:web:1700f10056d35f4f5df503",
+    measurementId: "G-RD9YP5ZEML"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 
 const i18n = new VueI18n({ locale: 'us', messages:i18n_messages })
 

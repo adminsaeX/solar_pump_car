@@ -18,6 +18,7 @@
     "element-ui": "^2.7.2",
     "es6-promise": "^4.2.6",
     "es7-shim": "^6.0.0",
+    "firebase": "^8.4.2",
     "flag-icon-css": "^3.3.0",
     "flex.box": "^3.4.4",
     "lodash": "^4.17.11",
@@ -31,6 +32,7 @@
     "vue-perfect-scrollbar": "^0.1.0",
     "vue-resize": "^0.4.5",
     "vue-router": "^3.0.6",
+    "vue-simple-alert": "^1.1.1",
     "vuebar": "0.0.20",
     "vuex": "^3.1.0",
     "vuex-persistedstate": "^2.5.4"
@@ -45,7 +47,7 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.2.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.14.1",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10"
   },

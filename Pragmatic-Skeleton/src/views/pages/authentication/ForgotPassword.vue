@@ -2,15 +2,15 @@
 	<vue-scroll class="forgot-password-page align-vertical">
 		<div class="form-wrapper align-vertical-middle">
 			<div class="form-box card-base card-shadow--extraLarge">
-				<img class="image-logo" src="@/assets/images/logo.svg" alt="logo"/>
+				<img class="image-logo" src="@/assets/images/logo.gif" alt="logo"/>
 				
 				<float-label class="styled">
-					<input type="email" placeholder="E-mail">
+					<input type="email" placeholder="อีเมล์">
 				</float-label>
 
 				<div class="flex text-center center pt-20 pb-10">			
-					<el-button plain size="small" @click="login" class="send-btn tada animated">
-						SEND RESET LINK
+					<el-button plain size="small" @click="reset()" class="send-btn tada animated">
+						ส่งข้อมูลรีเซตรหัสผ่าน
 					</el-button>
 				</div>
 			</div>
@@ -30,9 +30,8 @@ export default {
 		}
 	},
 	methods: {
-		login() {
-			this.$store.commit('setLogin')
-			this.$router.push('dashboard')
+		reset(){
+			
 		}
 	}
 }

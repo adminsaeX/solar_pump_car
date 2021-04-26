@@ -2,39 +2,26 @@
 	<vue-scroll class="login-page align-vertical">
 		<div class="form-wrapper align-vertical-middle">
 			<div class="form-box card-base card-shadow--extraLarge">
-				<img class="image-logo" src="@/assets/images/logo.svg" alt="logo"/>
-				
+				<img class="image-logo" src="@/assets/images/logo.gif" alt="logo"/>
+				<div class="flex justify-center align-center">
+					ระบบติดตามระยะไกลระบบสูบน้ำ
+				</div>
 				<float-label class="styled">
-					<input type="email" placeholder="E-mail">
+					<input v-model ="form.email" type="email" placeholder="อีเมล์">
 				</float-label>
 				<float-label class="styled">
-					<input type="password" placeholder="Password">
+					<input v-model ="form.password" type="password" placeholder="รหัสผ่าน">
 				</float-label>
 				
 				<div class="flex">
-					<div class="box grow"><el-checkbox>Remember Me </el-checkbox></div>
-					<div class="box grow text-right"><router-link to="/dashboard">Forgot Password?</router-link></div>
+					<div class="box grow"><el-checkbox>จดจำฉันในครั้งต่อไป </el-checkbox></div>
+					<div class="box grow text-right"><router-link to="/dashboard">ลืมรหัสผ่าน?</router-link></div>
 				</div>
 
 				<div class="flex text-center center pt-30 pb-10">			
 					<el-button plain size="small" @click="login" class="login-btn tada animated">
-						LOGIN
+						เข้าสู่ระบบ
 					</el-button>
-				</div>
-
-				<div class="text-divider mv-10">or</div>
-
-				<div class="flex column center pt-10 pb-10">			
-					<el-button plain size="small" @click="login" class="social-btn google">
-						Log in with Google
-					</el-button>
-					<el-button plain size="small" @click="login" class="social-btn facebook">
-						Log in with Facebook
-					</el-button>
-				</div>
-
-				<div class="text-center signin-box pt-20">
-					Don't have an account? <a>Sign in</a>
 				</div>
 			</div>
 		</div>
@@ -42,6 +29,8 @@
 </template>
 
 <script>
+import firebase from 'firebase'
+
 export default {
 	name: 'Login',
 	data() {
@@ -54,8 +43,19 @@ export default {
 	},
 	methods: {
 		login() {
-			this.$store.commit('setLogin')
-			this.$router.push('dashboard')
+			firebase
+			.auth()
+			.signInWithEmailAndPassword(this.form.email,this.form.password)
+			.then((user)=>{
+				let firebaseUser = firebase.auth().currentUser.providerData[0]
+				this.$store.commit('setLogin')
+				this.$router.push('dashboard')
+				this.$store.commit('setUser',firebaseUser.uid)
+				
+			}).catch((err)=>{
+				alert(err.message)
+			})
+			
 		}
 	}
 }
